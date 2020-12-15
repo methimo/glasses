@@ -1,5 +1,5 @@
 import useAuthUser from "../hooks/useAuthUser";
-import firebase from "../utils/firebase";
+import firebase from "firebase/app";
 
 function LogoutButton() {
   const { setAuthUser } = useAuthUser();
