@@ -4,6 +4,8 @@ import SafetyCheck from "../pages/SafetyCheck";
 import Purchase from "../pages/Purchase";
 import ModelOutput from "../pages/ModelOutput";
 import ModelVr from "../pages/ModelVr";
+import Confirm from "../pages/Confirm";
+import Exec from "../pages/Exec";
 import Bottom from "../pages/Bottom";
 
 function Router() {
@@ -27,6 +29,12 @@ function Router() {
         </Route>
         <Route exact path="/modelvr">
           <ModelVr />
+        </Route>
+        <Route exact path="/confirm">
+          <Confirm />
+        </Route>
+        <Route exact path="/exec">
+          <Exec />
         </Route>
       </Switch>
       <Bottom />
