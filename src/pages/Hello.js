@@ -11,17 +11,18 @@ import MoveChest from "../components/MoveChest";
 
 function Hello() {
   const { authUser } = useAuthUser();
+  console.log("test");
+  console.log(MoveChair);
+  console.log(MoveChair.state);
   return (
     <div>
       <head>
         <title>Hello VR room tour</title>
       </head>
-
       <h3>Hello!! {authUser.displayName}さん </h3>
       <div>
         <img src={authUser.photoURL} alt="icon" width="60" height="60" />
       </div>
-
       {/*} <p>
         <Link to="/hello">hello</Link>
   </p>*/}
@@ -58,12 +59,23 @@ function Hello() {
           </td>
         </tr>
       </table>
-
       <h3>選択した図面</h3>
       <img src={Room} art="chest" width="1000" height="500" />
       <MoveChair />
       <MoveTable />
       <MoveChest />
+      <p>
+        {MoveChair.top}
+        {MoveChair.left}
+      </p>
+      <p>
+        {MoveTable.top}
+        {MoveTable.left}
+      </p>
+      <p>
+        {MoveChest.top}
+        {MoveChest.left}
+      </p>
     </div>
   );
 }

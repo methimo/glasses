@@ -17,7 +17,7 @@ class MoveTable extends Component {
       isDrag: false,
       x: 0,
       y: 0,
-      top: 930,
+      top: 830,
       left: 830,
     };
     this.handleDown = this.handleDown.bind(this);
@@ -49,7 +49,9 @@ class MoveTable extends Component {
   render() {
     const { top, left } = this.state;
     const { classes } = this.props;
-    return (
+    return [
+      top,
+      left,
       <div
         role="presentation"
         ref={(node) => {
@@ -66,8 +68,8 @@ class MoveTable extends Component {
         }}
       >
         <img src={Table} art="table" width="70" height="70" />
-      </div>
-    );
+      </div>,
+    ];
   }
 }
 

@@ -17,7 +17,7 @@ class MoveChest extends Component {
       isDrag: false,
       x: 0,
       y: 0,
-      top: 830,
+      top: 930,
       left: 830,
     };
     this.handleDown = this.handleDown.bind(this);
@@ -49,7 +49,9 @@ class MoveChest extends Component {
   render() {
     const { top, left } = this.state;
     const { classes } = this.props;
-    return (
+    return [
+      top,
+      left,
       <div
         role="presentation"
         ref={(node) => {
@@ -66,8 +68,8 @@ class MoveChest extends Component {
         }}
       >
         <img src={Chest} art="chest" width="70" height="70" />
-      </div>
-    );
+      </div>,
+    ];
   }
 }
 

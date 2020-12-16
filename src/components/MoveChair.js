@@ -49,7 +49,9 @@ class MoveChair extends Component {
   render() {
     const { top, left } = this.state;
     const { classes } = this.props;
-    return (
+    return [
+      top,
+      left,
       <div
         role="presentation"
         ref={(node) => {
@@ -66,8 +68,8 @@ class MoveChair extends Component {
         }}
       >
         <img src={Chair} art="chair" width="70" height="70" />
-      </div>
-    );
+      </div>,
+    ];
   }
 }
 
