@@ -18,7 +18,7 @@ function Purchase() {
             <u>ダイニングチェア</u><br></br>
             40*40*60 cm<br></br>
             <br></br>
-            <p style={{ textAlign: 'right' }}>¥3000</p>
+            <p style={{ textAlign: 'right' }}>¥3,000</p>
           </td>
         </tr>
         <tr>
@@ -43,7 +43,7 @@ function Purchase() {
         </tr>
         <tr>
           <td></td>
-          <h4 style={{ textAlign: 'right',}}><u>合計 ： ¥9000</u></h4>
+          <h4 style={{ textAlign: 'right',}}><u>合計 ： ¥22000</u></h4>
         </tr>
       </table>
       
