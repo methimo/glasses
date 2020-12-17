@@ -24,7 +24,7 @@ function Bottom() {
     <div>
       {/* style属性とactiveStyle属性を追加 */}
       <NavLink style={styles.link} activeStyle={styles.linkActive} to="/hello">
-        Hello
+        TopMenu
       </NavLink>
       <NavLink
         style={styles.link}

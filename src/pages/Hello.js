@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuthUser from "../hooks/useAuthUser";
+import useChairInfo from "../hooks/useChairInfo";
 import LogoutButton from "../components/LogoutButton";
 import Chair from "../images/chair.png";
 import Table from "../images/table.png";
@@ -8,24 +9,28 @@ import Room from "../images/parse.jpg";
 import MoveChair from "../components/MoveChair";
 import MoveTable from "../components/MoveTable";
 import MoveChest from "../components/MoveChest";
+import React from "react";
 
 function Hello() {
   const { authUser } = useAuthUser();
-  console.log("test");
-  console.log(MoveChair);
-  console.log(MoveChair.state);
+  const { ChairInfo } = useChairInfo();
+  console.log(ChairInfo.top);
+  /*  setChairInfo({ top: 777, left: 755 });*/
+  /* console.log(setChairInfo.top);*/
   return (
     <div>
       <head>
-        <title>Hello VR room tour</title>
+        <title>VR room tour</title>
       </head>
-      <h3>Hello!! {authUser.displayName}さん </h3>
+      <h2>Welcome to VR roomtour </h2>
+      <h3>Hello!! {authUser.displayName}さん</h3>
       <div>
         <img src={authUser.photoURL} alt="icon" width="60" height="60" />
       </div>
       {/*} <p>
         <Link to="/hello">hello</Link>
   </p>*/}
+
       <h3>家具一覧</h3>
       <table border="1">
         <tr>
@@ -59,22 +64,20 @@ function Hello() {
           </td>
         </tr>
       </table>
-      <h3>選択した図面</h3>
+
+      <h3>家具の配置</h3>
       <img src={Room} art="chest" width="1000" height="500" />
-      <MoveChair />
-      <MoveTable />
-      <MoveChest />
       <p>
-        {MoveChair.top}
-        {MoveChair.left}
+        chair:
+        <MoveChair />
       </p>
       <p>
-        {MoveTable.top}
-        {MoveTable.left}
+        table:
+        <MoveTable />
       </p>
       <p>
-        {MoveChest.top}
-        {MoveChest.left}
+        chest:
+        <MoveChest />
       </p>
     </div>
   );

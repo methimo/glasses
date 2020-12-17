@@ -22,24 +22,34 @@ const styles = {
 function ModelOutput() {
   return (
     <div>
-      <h1>ModelOutput</h1>
-      <p>ModelOutput</p>
-
+      <h1>3Dモデル出力</h1>
+      <p>家具の配置をもとに部屋の3Dモデルを出力します</p>
       <iframe
         id="Sumerian"
         title="Sumerian"
-        src="https://ap-northeast-1.sumerian.aws/1002d821add74d5f8bb46f1a2ae8679c.scene"
+        src="https://ap-northeast-1.sumerian.aws/1d38503a93704f6a99202b7f3f82f00e.scene"
         width="100%"
         height="500px"
       ></iframe>
-
+      <iframe
+        id="Sumerian"
+        title="Sumerian"
+        src="https://ap-northeast-1.sumerian.aws/e8121b5f7f364082bf8df75dca3182d9.scene"
+        width="100%"
+        height="500px"
+      ></iframe>
       <NavLink
         style={styles.link}
         activeStyle={styles.linkActive}
         to="/modelvr"
       >
-        VRで暮らしてみる
+        VRゴーグルを使う
       </NavLink>
+      <p></p>
+      <p>
+        利用方法：Ocurusからこのページにアクセスし、「VRゴーグルを使う」ボタンを押してください
+      </p>
+      <p></p>
     </div>
   );
 }

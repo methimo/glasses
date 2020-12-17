@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Chair from "../images/chair.png";
+import useChairInfo from "../hooks/useChairInfo";
 
 const box = {
   padding: 0,
@@ -9,6 +10,17 @@ const box = {
   position: "absolute",
   zIndex: 1000,
 };
+
+{
+  /*
+  function setInfo() {
+  const { setChairInfo } = useChairInfo();
+  useEffect(() => {
+    setChairInfo({ top: 850, left: 850 });
+  }, [setAuthUser, setChairInfo]);
+}
+*/
+}
 
 class MoveChair extends Component {
   constructor(props) {

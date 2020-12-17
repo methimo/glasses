@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useAuthUser from "../hooks/useAuthUser";
 
-
 function Confirm() {
   const { authUser } = useAuthUser();
   return (
@@ -10,12 +9,12 @@ function Confirm() {
       <h1>購入確認</h1>
       <table border="1">
         <tr>
-          <td><h5>
-            お支払い方法
-          </h5></td>
-          <td><h5>
-            送付先
-          </h5></td>
+          <td>
+            <h5>お支払い方法</h5>
+          </td>
+          <td>
+            <h5>送付先</h5>
+          </td>
         </tr>
         <tr>
           <td>
@@ -43,11 +42,14 @@ function Confirm() {
           </td>
         </tr>
       </table>
-      <p style={{ fontSize: '80%' }}>
+      <p style={{ fontSize: "80%" }}>
         登録情報をご確認ください。<br></br>
-       「確定」ボタンをクリックいただきますとご購入が確定します。
+        「確定」ボタンをクリックいただきますとご購入が確定します。
       </p>
-      <Link to="/exec" style={{ fontSize: '120%' }}><button>確定</button></Link>
+      <Link to="/exec" style={{ fontSize: "120%" }}>
+        <button>確定</button>
+      </Link>
+      <p></p>
     </div>
   );
 }
