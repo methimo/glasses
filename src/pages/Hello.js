@@ -4,18 +4,29 @@ import LogoutButton from "../components/LogoutButton";
 import Chair from "../images/chair.png";
 import Table from "../images/table.png";
 import Chest from "../images/chest.png";
+import Room from "../images/parse.jpg";
+import MoveChair from "../components/MoveChair";
+import MoveTable from "../components/MoveTable";
+import MoveChest from "../components/MoveChest";
 
 function Hello() {
   const { authUser } = useAuthUser();
+  console.log("test");
+  console.log(MoveChair);
+  console.log(MoveChair.state);
   return (
     <div>
+      <head>
+        <title>Hello VR room tour</title>
+      </head>
       <h3>Hello!! {authUser.displayName}さん </h3>
       <div>
         <img src={authUser.photoURL} alt="icon" width="60" height="60" />
       </div>
-      <p>
+      {/*} <p>
         <Link to="/hello">hello</Link>
-      </p>
+  </p>*/}
+      <h3>家具一覧</h3>
       <table border="1">
         <tr>
           <th>家具名</th>
@@ -48,7 +59,23 @@ function Hello() {
           </td>
         </tr>
       </table>
-      <LogoutButton />
+      <h3>選択した図面</h3>
+      <img src={Room} art="chest" width="1000" height="500" />
+      <MoveChair />
+      <MoveTable />
+      <MoveChest />
+      <p>
+        {MoveChair.top}
+        {MoveChair.left}
+      </p>
+      <p>
+        {MoveTable.top}
+        {MoveTable.left}
+      </p>
+      <p>
+        {MoveChest.top}
+        {MoveChest.left}
+      </p>
     </div>
   );
 }
