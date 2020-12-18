@@ -24,6 +24,9 @@ function ModelOutput() {
     <div>
       <h1>3Dモデル出力</h1>
       <p>家具の配置をもとに部屋の3Dモデルを出力します</p>
+      <p>
+        Alt(MacOSの場合はOption)を押しながらドラッグで回転、Alt+Shift(Option+Shift)を押しながらドラッグで視点が平行移動します
+      </p>
       <iframe
         id="Sumerian"
         title="Sumerian"
