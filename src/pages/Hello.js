@@ -23,9 +23,9 @@ function Hello() {
         <title>VR room tour</title>
       </head>
       <h2>Welcome to VR roomtour </h2>
-      <h3>Hello!! {authUser.displayName}さん</h3>
+      <h4>Hello!! {authUser.displayName}さん</h4>
       <div>
-        <img src={authUser.photoURL} alt="icon" width="60" height="60" />
+        <img src={authUser.photoURL} alt="icon" width="50" height="50" />
       </div>
       {/*} <p>
         <Link to="/hello">hello</Link>
@@ -57,7 +57,7 @@ function Hello() {
         </tr>
         <tr>
           <td>タンス</td>
-          <td>50*80*120</td>
+          <td>50*80*100</td>
           <td>¥9000</td>
           <td>
             <img src={Chest} art="chest" width="70" height="70" />

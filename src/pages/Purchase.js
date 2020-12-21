@@ -46,7 +46,7 @@ function Purchase() {
           <td>
             <u>タンス</u>
             <br></br>
-            50*80*120 cm
+            50*80*100 cm
             <p style={{ textAlign: "right" }}>¥9000</p>
           </td>
         </tr>

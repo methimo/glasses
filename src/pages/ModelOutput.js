@@ -41,13 +41,10 @@ function ModelOutput() {
         width="100%"
         height="500px"
       ></iframe>
-      <NavLink
-        style={styles.link}
-        activeStyle={styles.linkActive}
-        to="/modelvr"
-      >
-        VRゴーグルを使う
-      </NavLink>
+      <a href="https://ap-northeast-1.sumerian.aws/1d38503a93704f6a99202b7f3f82f00e.scene">
+        <button>VRゴーグルを使う</button>
+      </a>
+
       <p></p>
       <p>
         利用方法：Ocurusからこのページにアクセスし、「VRゴーグルを使う」ボタンを押してください

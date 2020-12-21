@@ -2,14 +2,17 @@ import React from "react";
 import { useEffect } from "react";
 
 function SafetyCheck() {
-  const Chairtop = 400;
-  const Chairleft = 400;
+  const Chairtop = 100;
+  const Chairleft = 150;
 
-  const Tabletop = 500;
-  const Tableleft = 500;
+  const Tabletop = 150;
+  const Tableleft = 100;
 
-  const Chesttop = 300;
-  const Chestleft = 300;
+  const Chesttop = 100;
+  const Chestleft = 200;
+
+  const Chestheight = 100;
+  const Childhand = 120;
 
   const distance1 = Math.pow(
     Math.pow(Chairtop - Tabletop, 2) + Math.pow(Chairleft - Tableleft, 2),
@@ -26,49 +29,71 @@ function SafetyCheck() {
     1 / 2
   ).toFixed(2);
 
-  const defaultTodo = [
-    { title: "----- 家具の配置から距離を算出します-----" },
-    { title: "Chair <-> Tableの距離:" + distance1 },
-    { title: "Chair <-> Chestの距離:" + distance2 },
-    { title: "Chest <-> Tableの距離:" + distance3 },
-    { title: "----- 距離による危険度判定-----" },
+  let defaultTodo = [
+    { title: "----- 家具間の距離による危険度判定を行います-----" },
+    { title: "イス <-> テーブルの距離:" + distance1 + "cm" },
+    { title: "イス <-> タンスの距離:" + distance2 + "cm" },
+    { title: "テーブル <-> タンスの距離:" + distance3 + "cm" },
   ];
-  const [todoList, setTodoList] = React.useState(defaultTodo);
 
-  useEffect(() => {
-    if (distance1 < 170) {
-      const todo1 = {
-        title: "Chair <-> Tableが近いです",
-      };
-      setTodoList([...todoList, todo1], () => {
-        console.log("1");
-      });
-    }
-    if (distance2 < 170) {
-      const todo2 = {
-        title: "Chair <-> Chestが近いです",
-      };
-      setTodoList([...todoList, todo2]);
-    }
+  if (distance1 < 50) {
+    const todo1 = {
+      title: "  イス と テーブルの距離が近いです。",
+    };
+    defaultTodo.push(todo1);
+  }
 
-    if (distance3 < 170) {
-      const todo3 = {
-        title: "Chest <-> Tableが近いです",
-      };
-      setTodoList([...todoList, todo3]);
-    }
-    if (distance1 < 170 && distance2 < 170 && distance3 < 170) {
-      const todo4 = {
-        title: "家具の距離は十分に取れています",
-      };
-      setTodoList([...todoList, todo4]);
-    }
-  }, [setTodoList]);
+  if (distance2 < 70) {
+    const todo2 = {
+      title:
+        "  イス と タンスの距離が近いです。このままでは子供が挟まれてしまう可能性があります。",
+    };
+    defaultTodo.push(todo2);
+  }
+
+  if (distance3 < 70) {
+    const todo3 = {
+      title:
+        "  テーブル と タンスの距離が近いです。このままでは子供が挟まれてしまう可能性があります。",
+    };
+    defaultTodo.push(todo3);
+  }
+
+  if (distance1 > 50 && distance2 > 70 && distance3 > 70) {
+    const todo4 = {
+      title: "  家具の距離は十分に取れています。",
+    };
+    defaultTodo.push(todo4);
+  }
+
+  let checklist = [
+    {
+      title:
+        "----- 家具の大きさと子供の手の届く範囲から危険な箇所を判定します-----",
+    },
+    { title: "  タンスの高さ:" + Chestheight + "cm" },
+    { title: "  子供の手の届く高さ:" + Childhand + "cm" },
+  ];
+
+  if (Chestheight < Childhand) {
+    const todo6 = {
+      title:
+        "  タンスの上のものに手が届いてしまいます！タンスの上には危険なものを置かないようにすることをお勧めします。",
+    };
+    checklist.push(todo6);
+  }
 
   return (
     <div>
       <h1>家具配置の安全性チェック</h1>
-      {todoList.map((todo) => (
+      <p>
+        家具の配置、大きさから部屋内の思わぬ事故が発生しうる場所を判定します
+      </p>
+      <p>※注意：本機能は部屋内の事故を完全に防ぐものではありません</p>
+      {defaultTodo.map((todo) => (
+        <p>{todo.title}</p>
+      ))}
+      {checklist.map((todo) => (
         <p>{todo.title}</p>
       ))}
     </div>
